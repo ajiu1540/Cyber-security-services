@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="REDDITE — Professional Cybersecurity Services: VAPT, Penetration Testing, Threat Intelligence, OSINT, API & Network Security Testing. Based in Uttarakhand, India." />
+  <meta name="keywords" content="cybersecurity, VAPT, penetration testing, threat intelligence, OSINT, SOC, ethical hacking, India" />
+  <meta name="author" content="REDDITE" />
+  <title>REDDITE | Cybersecurity Services — VAPT, Threat Intel & Penetration Testing</title>
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --card: #111827;
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --accent2: #34d399;
+      --highlight: #67e8f9;
+      --danger: #f87171;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.25rem;
+    }
+
+    .nav-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, #06b6d4, #22d3ee);
+      color: #0a0e17 !important;
+      font-weight: 700;
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      text-decoration: none !important;
+      font-size: 0.9rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(34, 211, 238, 0.35);
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      text-align: center;
+      padding: 3.5rem 1rem 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.85rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      text-shadow: 0 0 28px rgba(34, 211, 238, 0.4);
+    }
+
+    .hero .subtitle {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .hero .tagline {
+      max-width: 640px;
+      margin: 1.25rem auto 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: center;
+      margin-top: 1.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #22d3ee);
+      color: #0a0e17;
+      box-shadow: 0 4px 18px rgba(34, 211, 238, 0.3);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 24px rgba(34, 211, 238, 0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(34, 211, 238, 0.1);
+    }
+
+    /* ========== PRICING ========== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .price-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), 0 8px 28px rgba(34, 211, 238, 0.15);
+      position: relative;
+    }
+
+    .price-card.featured::before {
+      content: "Popular";
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: linear-gradient(135deg, #06b6d4, #22d3ee);
+      color: #0a0e17;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .price-card h3 {
+      font-size: 1.08rem;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .price-card .price {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--accent2);
+      margin: 0.4rem 0 0.15rem;
+    }
+
+    .price-card .price span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .price-card .desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .price-card ul {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 1.15rem;
+    }
+
+    .price-card ul li {
+      padding: 0.25rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .price-card ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    .price-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+
+    /* ========== STATS ========== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.3rem 0.75rem;
+      text-align: center;
+    }
+
+    .stat .num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent2);
+    }
+
+    .stat .label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.3rem;
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 70px;
+    }
+
+    section h2 {
+      font-size: 1.45rem;
+      color: var(--highlight);
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 640px;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1.35rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .service-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.08rem;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .service-card > p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .service-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .service-meta span {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .service-meta strong {
+      color: var(--text);
+      font-weight: 600;
+      min-width: 70px;
+    }
+
+    /* ========== EXPERIENCE + SKILLS ========== */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 2rem;
+    }
+
+    .job {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem 1.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .job .role { font-weight: 600; font-size: 1.02rem; }
+    .job .meta { font-size: 0.86rem; color: var(--accent); margin: 0.2rem 0 0.45rem; }
+    .job p { font-size: 0.9rem; color: var(--muted); }
+
+    .skill { margin-bottom: 0.9rem; }
+    .skill .name {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+    .skill .name span:last-child { color: var(--accent2); font-weight: 600; }
+    .bar { height: 8px; background: #1f2937; border-radius: 4px; overflow: hidden; }
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #06b6d4, #22d3ee);
+      border-radius: 4px;
+    }
+
+    /* ========== TRUST / CERTS ========== */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .cert {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1rem;
+      text-align: center;
+    }
+
+    .cert .badge {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .cert h4 {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .cert p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .worked-with {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .worked-with span {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .testimonial {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.35rem 1.3rem;
+      position: relative;
+    }
+
+    .testimonial .quote {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial .author {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .testimonial .role {
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    /* ========== EDUCATION ========== */
+    .edu-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .edu-item .title { font-weight: 600; }
+    .edu-item .org { color: var(--muted); font-size: 0.9rem; }
+    .edu-item .year { color: var(--accent2); font-size: 0.88rem; font-weight: 500; }
+
+    /* ========== CONTACT ========== */
+    .contact-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      border: none;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-section .intro {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      min-width: 180px;
+      text-align: center;
+    }
+
+    .contact-card .icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .contact-card .label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-card .value { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-top: 0.15rem; }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .social-btn.linkedin:hover {
+      border-color: #0a66c2;
+      color: #0a66c2;
+      background: rgba(10, 102, 194, 0.1);
+    }
+
+    .social-btn.twitter:hover {
+      border-color: #e5e7eb;
+      color: #e5e7eb;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    footer .social-links {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .contact-form {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-family: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.1rem; letter-spacing: 0.1em; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">REDDITE</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#trust">Trust</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <h1>REDDITE</h1>
+      <p class="subtitle">Cybersecurity Professional &amp; Threat Intelligence Specialist</p>
+      <p class="tagline">
+        Helping businesses secure their digital assets with professional VAPT, Threat Intelligence, OSINT &amp; Penetration Testing services.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">🔒 Get Free Consultation</a>
+        <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="num">12M+</div>
+        <div class="label">Working Hours</div>
+      </div>
+      <div class="stat">
+        <div class="num">3+</div>
+        <div class="label">Companies</div>
+      </div>
+      <div class="stat">
+        <div class="num">190+</div>
+        <div class="label">Projects / Interns</div>
+      </div>
+      <div class="stat">
+        <div class="num">5+</div>
+        <div class="label">Awards Won</div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>🔒 Cybersecurity Services</h2>
+      <p class="section-intro">End-to-end security assessments designed to find real vulnerabilities before attackers do. Clear reports + practical remediation guidance.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="icon">🌐</div>
+          <h3>Web Application VAPT</h3>
+          <p>Full Vulnerability Assessment &amp; Penetration Testing for web apps — SQLi, XSS, broken auth, insecure uploads, IDOR &amp; more.</p>
+          <div class="service-meta">
+            <span><strong>Scope:</strong> Web apps, portals, admin panels</span>
+            <span><strong>Deliverable:</strong> Detailed report + remediation</span>
+            <span><strong>Timeline:</strong> 5–12 working days</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🔌</div>
+          <h3>API Security Testing</h3>
+          <p>Auth, authorization, injection, rate limiting, mass assignment, and sensitive data exposure checks for REST &amp; GraphQL APIs.</p>
+          <div class="service-meta">
+            <span><strong>Scope:</strong> REST / GraphQL / mobile backends</span>
+            <span><strong>Deliverable:</strong> API risk report + PoCs</span>
+            <span><strong>Timeline:</strong> 4–10 working days</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🖥️</div>
+          <h3>Network Penetration Testing</h3>
+          <p>Testing routers, switches, firewalls, servers &amp; internal infrastructure to uncover misconfigurations and exploitable weaknesses.</p>
+          <div class="service-meta">
+            <span><strong>Scope:</strong> Internal / External / Hybrid</span>
+            <span><strong>Deliverable:</strong> Network risk report</span>
+            <span><strong>Timeline:</strong> 7–15 working days</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🕵️</div>
+          <h3>OSINT &amp; Threat Intelligence</h3>
+          <p>Public data analysis, dark web monitoring, brand protection, leaked credential checks, and actionable threat detection.</p>
+          <div class="service-meta">
+            <span><strong>Scope:</strong> Brand, employees, infrastructure</span>
+            <span><strong>Deliverable:</strong> Threat intel brief + alerts</span>
+            <span><strong>Timeline:</strong> Ongoing / project-based</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">⚔️</div>
+          <h3>Full Penetration Testing</h3>
+          <p>Simulated real-world cyberattacks to evaluate and strengthen your overall security posture across systems and applications.</p>
+          <div class="service-meta">
+            <span><strong>Scope:</strong> Web + Network + Social eng. (opt.)</span>
+            <span><strong>Deliverable:</strong> Executive + technical report</span>
+            <span><strong>Timeline:</strong> 10–20 working days</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🛡️</div>
+          <h3>VAPT Assessment Package</h3>
+          <p>Combined Vulnerability Assessment &amp; Penetration Testing for web apps, networks, and systems — one comprehensive engagement.</p>
+          <div class="service-meta">
+            <span><strong>Scope:</strong> Multi-asset environments</span>
+            <span><strong>Deliverable:</strong> Consolidated findings + roadmap</span>
+            <span><strong>Timeline:</strong> 12–25 working days</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>💰 Pricing</h2>
+      <p class="section-intro">Transparent starting prices for standard engagements. Final quote depends on scope, assets, and complexity. Custom packages available.</p>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>Web Application VAPT</h3>
+          <div class="price">₹25,000 <span>onwards</span></div>
+          <p class="desc">Full vulnerability assessment &amp; penetration testing for web apps.</p>
+          <ul>
+            <li>SQLi, XSS, Auth &amp; more</li>
+            <li>Detailed report + remediation</li>
+            <li>5–12 working days</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Quote</a>
+        </div>
+
+        <div class="price-card">
+          <h3>API Security Testing</h3>
+          <div class="price">₹20,000 <span>onwards</span></div>
+          <p class="desc">REST / GraphQL API testing — auth, injection, rate limit &amp; data exposure.</p>
+          <ul>
+            <li>Auth &amp; authorization checks</li>
+            <li>PoCs + risk report</li>
+            <li>4–10 working days</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Quote</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Network Penetration Testing</h3>
+          <div class="price">₹35,000 <span>onwards</span></div>
+          <p class="desc">Internal / external network testing for routers, firewalls &amp; servers.</p>
+          <ul>
+            <li>Internal &amp; external scope</li>
+            <li>Network risk report</li>
+            <li>7–15 working days</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Quote</a>
+        </div>
+
+        <div class="price-card featured">
+          <h3>Full Penetration Testing</h3>
+          <div class="price">₹55,000 <span>onwards</span></div>
+          <p class="desc">Simulated real-world attacks across web, network &amp; systems.</p>
+          <ul>
+            <li>Web + Network coverage</li>
+            <li>Executive + technical report</li>
+            <li>10–20 working days</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%; justify-content:center;">Get Quote</a>
+        </div>
+
+        <div class="price-card">
+          <h3>OSINT &amp; Threat Intel</h3>
+          <div class="price">₹15,000 <span>onwards</span></div>
+          <p class="desc">Dark web monitoring, brand protection &amp; leaked credential checks.</p>
+          <ul>
+            <li>Brand &amp; employee exposure</li>
+            <li>Threat intel brief</li>
+            <li>Project or monthly</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Quote</a>
+        </div>
+
+        <div class="price-card">
+          <h3>VAPT Package</h3>
+          <div class="price">₹70,000 <span>onwards</span></div>
+          <p class="desc">Combined web + network + systems assessment in one engagement.</p>
+          <ul>
+            <li>Multi-asset coverage</li>
+            <li>Consolidated report + roadmap</li>
+            <li>12–25 working days</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Quote</a>
+        </div>
+
+      </div>
+      <p class="price-note">Prices are starting estimates for standard scope in India. Complex environments, multiple assets, or retests may vary. Contact for a custom quote.</p>
+    </section>
+
+    <!-- EXPERIENCE + SKILLS -->
+    <div class="grid-2">
+      <section id="experience">
+        <h2>💼 Work Experience</h2>
+
+        <div class="job">
+          <div class="role">Cyber Threat Intelligence Analyst</div>
+          <div class="meta">Technisanct (Full-time On-site) · Feb 2024 – Present</div>
+          <p>Building threat intelligence platforms, Attack Surface Management, Vulnerability Intelligence, Dark Web Monitoring, Ransomware Tracking &amp; Phishing Detection.</p>
+        </div>
+
+        <div class="job">
+          <div class="role">CTI Analyst Intern</div>
+          <div class="meta">Technisanct (Kochi, Kerala) · Aug 2023 – Feb 2024</div>
+          <p>CTI fundamentals, manual &amp; automated monitoring, frameworks, OSINT, and dark web monitoring.</p>
+        </div>
+
+        <div class="job">
+          <div class="role">Cybersecurity Researcher</div>
+          <div class="meta">Bugcrowd · Feb 2023 – Present</div>
+          <p>Identifying and reporting security vulnerabilities to help organizations improve their security posture.</p>
+        </div>
+
+        <div class="job">
+          <div class="role">Cyber Security Engineer Intern</div>
+          <div class="meta">CyberCrews Hacker Academy · Nov 2022 – Apr 2023</div>
+          <p>Malware Analysis, SOC, VAPT, Manual Testing, and Log Analysis.</p>
+        </div>
+
+        <div class="job">
+          <div class="role">CTF Player</div>
+          <div class="meta">TryHackMe &amp; Others · Feb 2021 – Present</div>
+          <p>Active in Capture The Flag challenges — Penetration Testing, Web App Security &amp; Linux Administration.</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>🛠️ Skills &amp; Tools</h2>
+        <div class="skill">
+          <div class="name"><span>PenTesting</span><span>90%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="name"><span>SOC Analysis</span><span>92%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="name"><span>Nmap</span><span>95%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="name"><span>OSINT</span><span>90%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="name"><span>Cybersecurity</span><span>85%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="name"><span>Networking</span><span>80%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="name"><span>InfoSec</span><span>75%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:75%"></div></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TRUST -->
+    <section id="trust">
+      <h2>✅ Trust &amp; Credibility</h2>
+
+      <h3 style="font-size:1.05rem; color:var(--text); margin-bottom:0.85rem;">Training &amp; Education</h3>
+      <div class="certs-grid" style="margin-bottom:1.75rem;">
+        <div class="cert">
+          <div class="badge">🎓</div>
+          <h4>Higher Cybersecurity Studies</h4>
+          <p>Suresh Gyan Vihar University · 2023–2025</p>
+        </div>
+        <div class="cert">
+          <div class="badge">🛡️</div>
+          <h4>Professional Cybersecurity Training</h4>
+          <p>CyberCrews Hacker Academy · 2021–2023</p>
+        </div>
+        <div class="cert">
+          <div class="badge">🏆</div>
+          <h4>CTF &amp; Hands-on Practice</h4>
+          <p>TryHackMe &amp; platforms · Ongoing</p>
+        </div>
+        <div class="cert">
+          <div class="badge">🔍</div>
+          <h4>Bug Bounty Research</h4>
+          <p>Bugcrowd · Active researcher</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.05rem; color:var(--text); margin-bottom:0.6rem;">Worked With / Platforms</h3>
+      <div class="worked-with">
+        <span>Technisanct</span>
+        <span>Bugcrowd</span>
+        <span>CyberCrews Hacker Academy</span>
+        <span>TryHackMe</span>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (placeholder style — replace with real ones) -->
+    <section id="testimonials">
+      <h2>💬 What Clients Say</h2>
+      <p class="section-intro">Sample testimonials — replace with real client feedback when available.</p>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p class="quote">“Clear, practical findings and a report we could actually act on. Helped us close critical web vulnerabilities before launch.”</p>
+          <div class="author">— Startup Founder</div>
+          <div class="role">Web Application VAPT</div>
+        </div>
+        <div class="testimonial">
+          <p class="quote">“Professional approach to threat intel and dark web monitoring. Gave us early visibility into credential leaks.”</p>
+          <div class="author">— Security Lead</div>
+          <div class="role">OSINT &amp; Threat Intelligence</div>
+        </div>
+        <div class="testimonial">
+          <p class="quote">“Thorough API testing with solid proof-of-concepts. Communication was clear throughout the engagement.”</p>
+          <div class="author">— Tech Lead</div>
+          <div class="role">API Security Testing</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION (compact) -->
+    <section id="education">
+      <h2>🎓 Education</h2>
+      <div class="edu-item">
+        <div>
+          <div class="title">Higher Cybersecurity Studies</div>
+          <div class="org">Suresh Gyan Vihar University</div>
+        </div>
+        <div class="year">2023 – 2025</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="title">Professional Cybersecurity Training</div>
+          <div class="org">CyberCrews Hacker Academy</div>
+        </div>
+        <div class="year">Jan 2021 – Feb 2023</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="title">Higher Secondary Education</div>
+        </div>
+        <div class="year">Completed 2021</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="title">High School</div>
+        </div>
+        <div class="year">Completed 2019</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-section">
+        <h2>📩 Get in Touch</h2>
+        <p class="intro">Need a security assessment, VAPT, or threat intelligence support? Let’s talk. Free initial consultation.</p>
+
+        <div class="contact-options">
+          <div class="contact-card">
+            <div class="icon">📧</div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:ajuuk410@gmail.com">ajuuk410@gmail.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="icon">📍</div>
+            <div class="label">Location</div>
+            <div class="value">Uttarakhand, India</div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/rajesh-kumar-000039440" class="social-btn linkedin" target="_blank" rel="noopener noreferrer">
+            <span>in</span> LinkedIn
+          </a>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xrpbdprq" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="">Select a service…</option>
+            <option>Web Application VAPT</option>
+            <option>API Security Testing</option>
+            <option>Network Penetration Testing</option>
+            <option>OSINT &amp; Threat Intelligence</option>
+            <option>Full Penetration Testing</option>
+            <option>VAPT Assessment Package</option>
+            <option>Other / Consultation</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your requirements, scope, or timeline…" required></textarea>
+
+          <!-- Formspree honeypot (spam protection) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Enquiry</button>
+          <p class="form-note">Messages go directly to your email via Formspree. Or email: <a href="mailto:ajuuk410@gmail.com">ajuuk410@gmail.com</a></p>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p><strong>REDDITE</strong> · Cybersecurity Professional &amp; Threat Intelligence Specialist</p>
+    <p style="margin-top:0.4rem;">VAPT · Penetration Testing · Threat Intel · OSINT · API &amp; Network Security</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/rajesh-kumar-000039440" class="social-btn linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <p style="margin-top:0.6rem;"><a href="mailto:ajuuk410@gmail.com">ajuuk410@gmail.com</a> · Uttarakhand, India</p>
+  </footer>
+
+</body>
+</html>
